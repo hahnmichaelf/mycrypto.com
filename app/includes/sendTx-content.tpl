@@ -172,7 +172,7 @@
 
     <!-- Advanced Option Panel -->
     <a ng-click="showAdvance=true"
-       ng-show='globalService.currentTab==globalService.tabs.sendTransaction.id'>
+       ng-show='globalService.currentTab==globalService.tabs.sendTransaction.id || tx.data !=""'>
       <p class="strong" translate="TRANS_advanced">
         + Advanced: Add Data
       </p>
@@ -200,7 +200,6 @@
                  ng-model="tx.data"
                  ng-disabled="tx.readOnly || checkTxReadOnly"
                  ng-class="Validator.isValidHex(tx.data) ? 'is-valid' : 'is-invalid'"/>
-
         </div>
       </section>
 
